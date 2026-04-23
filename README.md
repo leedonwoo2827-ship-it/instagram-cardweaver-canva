@@ -26,11 +26,11 @@ StoryLens → ScriptForge ──┬──→ FlowGenie + TTS → SceneWeaver / S
 ## 설치
 
 ```
-/plugin marketplace add leedonwoo2827-ship-it/cardweaver
-/plugin install cardweaver@cardweaver
+/plugin marketplace add leedonwoo2827-ship-it/instagram-cardweaver-canva
+/plugin install cardweaver@instagram-cardweaver-canva
 ```
 
-설치 후 `/card`, `/card-ingest`, `/card-script`, `/card-render` 커맨드 활성화. 업데이트: `/plugin update cardweaver@cardweaver`.
+설치 후 `/card`, `/card-ingest`, `/card-script`, `/card-render` 커맨드 활성화. 업데이트: `/plugin update cardweaver@instagram-cardweaver-canva`.
 
 로컬 개발 중엔 심볼릭 링크(Junction) 로 연결:
 ```powershell
