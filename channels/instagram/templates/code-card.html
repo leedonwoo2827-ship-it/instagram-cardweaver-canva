@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>CardWeaver — code-card</title>
+<style>
+  @font-face { font-family: 'NotoSansKR'; font-weight: 400; src: local('Noto Sans KR'), local('Malgun Gothic'); }
+  @font-face { font-family: 'NotoSansKR'; font-weight: 700; src: local('Noto Sans KR Bold'), local('Malgun Gothic Bold'); }
+  @font-face { font-family: 'JBMono'; src: local('JetBrains Mono'), local('Consolas'), local('Menlo'); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; }
+  body {
+    font-family: 'NotoSansKR', sans-serif;
+    background: var(--primary, #0F1419);
+    color: var(--text, #E6EDF3);
+    display: grid;
+    grid-template-rows: 1fr 4fr 1.5fr;
+    padding: 64px;
+  }
+  .top    { display: flex; justify-content: space-between; align-items: flex-start; }
+  .middle { display: flex; flex-direction: column; justify-content: center; gap: 24px; }
+  .bottom { display: flex; flex-direction: column; justify-content: flex-end; gap: 24px; }
+
+  .series-title { font-size: 28px; font-weight: 500; opacity: 0.85; letter-spacing: 0.02em; }
+  .index-label  { font-size: 32px; font-weight: 500; opacity: 0.7; color: var(--accent, #22D3EE); }
+
+  .code-caption {
+    font-size: 28px; font-weight: 500;
+    color: var(--accent, #22D3EE);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+  .code-block {
+    background: #0D1117;
+    border: 2px solid var(--accent, #22D3EE);
+    border-radius: 12px;
+    padding: 40px 36px;
+    font-family: 'JBMono', 'Consolas', monospace;
+    font-size: 28px;
+    line-height: 1.5;
+    color: #E6EDF3;
+    white-space: pre;
+    overflow: hidden;
+  }
+  .code-block .ln {
+    display: inline-block;
+    width: 2.5ch;
+    color: #6e7681;
+    margin-right: 1ch;
+    user-select: none;
+  }
+
+  .headline {
+    font-size: 36px; font-weight: 500; line-height: 1.3;
+    color: var(--text, #E6EDF3);
+    max-width: 90%;
+    white-space: pre-wrap;
+  }
+
+  .handle-row { display: flex; justify-content: space-between; align-items: center; }
+  .handle { font-size: 28px; font-weight: 500; opacity: 0.85; }
+  .logo   { font-size: 28px; font-weight: 500; opacity: 0.85; color: var(--accent, #22D3EE); }
+</style>
+</head>
+<body id="card" style="--primary:#0F1419; --accent:#22D3EE; --text:#E6EDF3;">
+  <div class="top">
+    <div class="series-title" id="series-title">시리즈 제목</div>
+    <div class="index-label" id="index-label">3/8</div>
+  </div>
+  <div class="middle">
+    <div class="code-caption" id="code-caption">USAGE</div>
+    <pre class="code-block" id="code-block"></pre>
+  </div>
+  <div class="bottom">
+    <div class="headline" id="headline">핵심 엔트리포인트. 한 줄 설명.</div>
+    <div class="handle-row">
+      <div class="handle" id="handle">@editor0712</div>
+      <div class="logo" id="logo">CardWeaver</div>
+    </div>
+  </div>
+
+<script>
+  const CARD = /*__CARD_DATA__*/ {
+    series_title: "FlowGenie README",
+    index_label: "3/8",
+    role: "code",
+    headline: "핵심 엔트리포인트",
+    code_snippet: {
+      lang: "javascript",
+      caption: "USAGE",
+      text: "const gen = new FlowGenie();\nawait gen.loadPrompts(input);\nawait gen.runBatch();\ngen.saveAll('./out');"
+    },
+    handle: "@editor0712",
+    logo: "CardWeaver",
+    palette: { primary: "#0F1419", accent: "#22D3EE", text_on_primary: "#E6EDF3" }
+  };
+
+  const body = document.body;
+  body.style.setProperty('--primary', CARD.palette.primary);
+  body.style.setProperty('--accent',  CARD.palette.accent);
+  body.style.setProperty('--text',    CARD.palette.text_on_primary);
+
+  document.getElementById('series-title').textContent = CARD.series_title || '';
+  document.getElementById('index-label').textContent  = CARD.index_label  || '';
+  document.getElementById('headline').textContent     = CARD.headline     || '';
+  document.getElementById('code-caption').textContent = (CARD.code_snippet && CARD.code_snippet.caption) || '';
+  document.getElementById('handle').textContent       = CARD.handle       || '';
+  document.getElementById('logo').textContent         = CARD.logo         || '';
+
+  const block = document.getElementById('code-block');
+  const text = (CARD.code_snippet && CARD.code_snippet.text) || '';
+  const lines = text.split('\n');
+  block.innerHTML = lines.map((line, i) => {
+    const ln = String(i + 1).padStart(2, '0');
+    const escaped = line
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+    return `<span class="ln">${ln}</span>${escaped}`;
+  }).join('\n');
+</script>
+</body>
+</html>

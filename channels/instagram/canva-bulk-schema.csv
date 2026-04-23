@@ -1,0 +1,5 @@
+card_no,index_label,role,template,series_title,series_subtitle,headline,body,image_url,palette_primary,palette_accent,code_lang,code_text
+1,1/8,hook,photo-overlay,시리즈 제목,부제,헤드라인,본문,file:///D:/.../images/card_01_hero.png,#3B2E22,#E3A857,,
+2,2/8,body,typo-minimal,시리즈 제목,부제,헤드라인,본문,,#3B2E22,#E3A857,,
+3,3/8,code,code-card,시리즈 제목,부제,코드 설명,,,"#0F1419","#22D3EE","python","def hello():\n    print('hi')"
+8,8/8,cta,typo-minimal,시리즈 제목,부제,저장하고 다시 보세요,DM으로 PDF 받기,,#3B2E22,#E3A857,,

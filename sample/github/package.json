@@ -1,0 +1,8 @@
+{
+  "name": "flowgenie",
+  "version": "0.2.0",
+  "description": "Chrome extension for batch image generation on Google Flow / ImageFX",
+  "author": "leedonwoo",
+  "license": "MIT",
+  "keywords": ["chrome-extension", "google-flow", "imagefx", "batch", "cdp"]
+}

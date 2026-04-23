@@ -1,0 +1,58 @@
+{
+  "channel": "instagram",
+  "canvas": {
+    "width": 1080,
+    "height": 1350,
+    "ratio": "4:5",
+    "dpi": 72
+  },
+  "cards": {
+    "min": 6,
+    "max": 10,
+    "default": 8
+  },
+  "safe_zone": {
+    "top": 64,
+    "right": 64,
+    "bottom": 64,
+    "left": 64
+  },
+  "bleed_danger_zone": {
+    "top": 160,
+    "bottom": 160
+  },
+  "fonts": {
+    "primary": "Noto Sans KR",
+    "mono": "JetBrains Mono",
+    "embed_via": "@font-face in HTML templates"
+  },
+  "palette_presets": {
+    "sepia-cream":  { "primary": "#3B2E22", "accent": "#E3A857", "text_on_primary": "#F5EBD8" },
+    "navy-orange":  { "primary": "#1E2A4A", "accent": "#F28B3C", "text_on_primary": "#FFFFFF" },
+    "dark-cyan":    { "primary": "#0F1419", "accent": "#22D3EE", "text_on_primary": "#E6EDF3" }
+  },
+  "source_type_defaults": {
+    "book":        { "palette": "sepia-cream", "primary_template": "typo-minimal", "hero_template": "photo-overlay" },
+    "curriculum":  { "palette": "navy-orange", "primary_template": "photo-overlay", "hero_template": "photo-overlay" },
+    "github":      { "palette": "dark-cyan",   "primary_template": "typo-minimal", "hero_template": "photo-overlay" }
+  },
+  "text_limits": {
+    "series_title": { "recommended": 22, "strict_max": 30 },
+    "headline":     { "recommended": 17, "strict_max": 22 },
+    "body":         { "recommended": 80, "strict_max": 120 },
+    "caption":      { "recommended": 500, "strict_max": 2200 },
+    "hashtags":     { "recommended_min": 6, "recommended_max": 10 },
+    "code_lines":   { "recommended_max": 8, "strict_max": 12 }
+  },
+  "templates": {
+    "typo-minimal":  "templates/typo-minimal.html",
+    "photo-overlay": "templates/photo-overlay.html",
+    "code-card":     "templates/code-card.html"
+  },
+  "cta_patterns": [
+    { "id": "save",   "label_kr": "저장하고 다시 보기 📌", "verb": "저장" },
+    { "id": "dm",     "label_kr": "DM으로 받기 ✉️",       "verb": "DM" },
+    { "id": "link",   "label_kr": "프로필 링크 확인 🔗",  "verb": "클릭" },
+    { "id": "series", "label_kr": "다음 시리즈 예고 →",   "verb": "팔로우" }
+  ]
+}

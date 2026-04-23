@@ -1,0 +1,20 @@
+{
+  "name": "cardweaver",
+  "owner": {
+    "name": "leedonwoo"
+  },
+  "metadata": {
+    "description": "책/교육과정/GitHub 소스를 Instagram 카드뉴스로 조립하는 스킬 세트. 스크립트 생성 후 사람이 헤드라인·본문을 손보는 명확한 개입 포인트를 둔다. FlowGenie 이미지 + Canva Bulk CSV 일괄 출력.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "cardweaver",
+      "source": "./",
+      "version": "0.1.0",
+      "description": "3종 소스(책/교육/GitHub) → card_script.json → FlowGenie JSON + Canva Bulk CSV + 프리뷰 PNG. 4단계 오케스트레이션 /card-ingest → /card-script → (사람 개입) → /card-render. 채널은 Instagram 1080×1350 기본, channels/ 하위에 5채널 장기 슬롯.",
+      "category": "content-production",
+      "tags": ["cardweaver", "cardnews", "instagram", "canva", "carousel", "flowgenie", "marketing"]
+    }
+  ]
+}

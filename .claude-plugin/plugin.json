@@ -1,0 +1,20 @@
+{
+  "name": "cardweaver",
+  "version": "0.1.0",
+  "description": "책/교육과정/GitHub 원고를 Instagram 카드뉴스로 엮는 4단계 파이프라인. 소스 수집 → 카드 스크립트 JSON 생성 → 사람 검수 → (FlowGenie JSON + HTML 프리뷰 + Canva Bulk CSV) 출력. SceneWeaver/ScriptForge/FlowGenie 패밀리의 카드뉴스 브랜치.",
+  "author": {
+    "name": "leedonwoo"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cardweaver",
+    "cardnews",
+    "instagram",
+    "carousel",
+    "canva",
+    "flowgenie",
+    "scriptforge",
+    "sceneweaver",
+    "marketing"
+  ]
+}

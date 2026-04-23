@@ -1,0 +1,19 @@
+{
+  "name": "cardweaver-mcp",
+  "version": "0.1.0",
+  "description": "MCP server for CardWeaver — analyze_source, render_html_preview, export_canva_bulk_csv, export_flowgenie_json",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "selftest": "node index.js --self-test"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.0",
+    "puppeteer": "^23.0.0",
+    "csv-stringify": "^6.5.0"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

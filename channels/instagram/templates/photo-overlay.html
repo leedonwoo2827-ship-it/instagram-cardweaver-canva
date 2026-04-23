@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<title>CardWeaver — photo-overlay</title>
+<style>
+  @font-face { font-family: 'NotoSansKR'; font-weight: 400; src: local('Noto Sans KR'), local('Malgun Gothic'); }
+  @font-face { font-family: 'NotoSansKR'; font-weight: 700; src: local('Noto Sans KR Bold'), local('Malgun Gothic Bold'); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1350px; overflow: hidden; }
+  body {
+    font-family: 'NotoSansKR', sans-serif;
+    background: var(--primary, #3B2E22);
+    color: var(--text, #FFFFFF);
+    position: relative;
+  }
+  .bg {
+    position: absolute; inset: 0;
+    width: 100%; height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  .gradient-top, .gradient-bottom {
+    position: absolute; left: 0; right: 0;
+    z-index: 1;
+    pointer-events: none;
+  }
+  .gradient-top {
+    top: 0; height: 40%;
+    background: linear-gradient(to bottom, var(--primary, #3B2E22) 0%, transparent 100%);
+    opacity: 0.85;
+  }
+  .gradient-bottom {
+    bottom: 0; height: 60%;
+    background: linear-gradient(to top, var(--primary, #3B2E22) 20%, transparent 100%);
+    opacity: 0.9;
+  }
+  .layout {
+    position: relative; z-index: 2;
+    width: 100%; height: 100%;
+    display: grid;
+    grid-template-rows: 1fr 3fr 1fr;
+    padding: 64px;
+  }
+  .top    { display: flex; justify-content: space-between; align-items: flex-start; }
+  .middle { display: flex; flex-direction: column; justify-content: flex-end; gap: 32px; }
+  .bottom { display: flex; justify-content: space-between; align-items: flex-end; }
+
+  .series-title { font-size: 28px; font-weight: 500; opacity: 0.9; letter-spacing: 0.02em; }
+  .index-label  { font-size: 32px; font-weight: 500; opacity: 0.75; }
+
+  .headline {
+    font-size: 72px; font-weight: 700; line-height: 1.15;
+    color: var(--accent, #E3A857);
+    max-width: 85%;
+    white-space: pre-wrap;
+    text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+  }
+  .body {
+    font-size: 36px; font-weight: 400; line-height: 1.45;
+    max-width: 85%;
+    white-space: pre-wrap;
+    text-shadow: 0 1px 6px rgba(0,0,0,0.4);
+  }
+  .handle { font-size: 28px; font-weight: 500; opacity: 0.9; }
+  .logo   { font-size: 28px; font-weight: 500; opacity: 0.9; }
+
+  body.cta .handle { font-size: 42px; font-weight: 700; opacity: 1; }
+</style>
+</head>
+<body id="card" style="--primary:#3B2E22; --accent:#E3A857; --text:#FFFFFF;">
+  <img class="bg" id="bg" alt="">
+  <div class="gradient-top"></div>
+  <div class="gradient-bottom"></div>
+  <div class="layout">
+    <div class="top">
+      <div class="series-title" id="series-title">시리즈 제목</div>
+      <div class="index-label" id="index-label">1/8</div>
+    </div>
+    <div class="middle">
+      <div class="headline" id="headline">헤드라인</div>
+      <div class="body" id="body">본문</div>
+    </div>
+    <div class="bottom">
+      <div class="handle" id="handle">@editor0712</div>
+      <div class="logo" id="logo">CardWeaver</div>
+    </div>
+  </div>
+
+<script>
+  const CARD = /*__CARD_DATA__*/ {
+    series_title: "시리즈 제목",
+    index_label: "1/8",
+    role: "hook",
+    headline: "1840년, 우편이 학교가 되었다",
+    body: "영국의 Isaac Pitman은 엽서로 속기를 가르쳤다.",
+    handle: "@editor0712",
+    logo: "CardWeaver",
+    image_url: "",
+    palette: { primary: "#3B2E22", accent: "#E3A857", text_on_primary: "#FFFFFF" }
+  };
+
+  const body = document.body;
+  body.style.setProperty('--primary', CARD.palette.primary);
+  body.style.setProperty('--accent',  CARD.palette.accent);
+  body.style.setProperty('--text',    CARD.palette.text_on_primary);
+  if (CARD.role === 'cta') body.classList.add('cta');
+
+  const bg = document.getElementById('bg');
+  if (CARD.image_url) bg.src = CARD.image_url;
+  else bg.style.display = 'none';
+
+  document.getElementById('series-title').textContent = CARD.series_title || '';
+  document.getElementById('index-label').textContent  = CARD.index_label  || '';
+  document.getElementById('headline').textContent     = CARD.headline     || '';
+  document.getElementById('body').textContent         = CARD.body         || '';
+  document.getElementById('handle').textContent       = CARD.handle       || '';
+  document.getElementById('logo').textContent         = CARD.logo         || '';
+</script>
+</body>
+</html>
