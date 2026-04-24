@@ -16,6 +16,10 @@
 3. **B2B 톤**: 수치·근거·출처 명시 관행, 한국 B2B 계정 사례
 4. **페이지당 글자수 권장** — 링크드인은 Instagram 보다 긴 본문 허용
 
+## 시드 문서
+
+📄 [knowledge/channel-style-research.md](../../knowledge/channel-style-research.md) 의 LinkedIn 섹션에 이미 초안 기록 (Document Post 우선·B2B 격식 톤·수치 훅·주 2~3회 리듬). 🔎 플래그 항목 조사 완료 후 `RESEARCH.md` 로 승격.
+
 ## 작성할 파일
 
 조사 결과를 `RESEARCH.md` 로 먼저 정리하고, 결정되면:

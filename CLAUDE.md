@@ -21,7 +21,7 @@ StoryLens → ScriptForge ──┬──→ FlowGenie + TTS → SceneWeaver   (
 
 ## 핵심 규칙
 
-1. **입력 스키마 고정**: 3종 어댑터는 공통 `card_script.json v1.0` 으로 정규화. 단일 출처는 [knowledge/card-script-schema.md](knowledge/card-script-schema.md).
+1. **입력 스키마 고정**: 3종 어댑터는 공통 `card_script.json v1.0` 으로 정규화. 단일 출처는 [knowledge/card-script-schema.md](knowledge/card-script-schema.md). 채널별 글풍·훅·발행리듬 시드는 [knowledge/channel-style-research.md](knowledge/channel-style-research.md) (18개 한국 채널 + 첫 발행자 플레이북).
 2. **시리즈별 단일 워크스페이스**: `workspace/<series-slug>/` 하나에 모든 자산·중간물·최종 산출. 상류 폴더를 오가지 않는다.
 3. **스크립트 편집 개입 포인트**: `/card-script` 이후 `/card-render` 이전에 **사람이 `card_script.json` 의 헤드라인·본문·template 필드를 손본다**. 자동으로 넘어가지 않는다.
 4. **FlowGenie 스키마 승계**: 출력하는 이미지 요청 JSON은 `D:\00work\260415-auto-flowgenie\` 의 입력 스키마를 변경 없이 준수한다.

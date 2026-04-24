@@ -13,6 +13,10 @@
 3. **링크 미리보기 vs 캐러셀 도달 비교** — 긴 본문에 링크 하나만 다는 게 더 나은 케이스도 많음
 4. **한국 페이지 사례** — B2B 실적 시리즈가 페북에서 실제 성과를 내는지
 
+## 시드 문서
+
+📄 [knowledge/channel-style-research.md](../../knowledge/channel-style-research.md) 의 Facebook 섹션에 이미 초안 기록. 🔎 플래그 항목을 실측 조사로 채운 뒤 `RESEARCH.md` 로 승격.
+
 ## 작성할 파일
 
 조사 결과를 `RESEARCH.md` 로 먼저 정리하고, 결정되면:

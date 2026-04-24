@@ -8,6 +8,7 @@
 
 ## 참고
 
+- **시드 문서**: [knowledge/channel-style-research.md](../../knowledge/channel-style-research.md) — Threads 섹션에 비율·글풍·훅/CTA·해시태그·발행리듬 초안 기록. 실구현 시 여기를 `RESEARCH.md` 로 승격.
 - Meta 플랫폼이라 Instagram 프로필·태그 재사용 용이
 - 권장 비율 1:1 (1080×1080), 장수 3~5장으로 Instagram 보다 타이트
 - 첫 카드가 훅 역할, 본문은 짧게 (글자수 제한이 Instagram 보다 엄격)
